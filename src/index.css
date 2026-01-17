@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+@layer base {
+    body {
+        @apply text-gray-800 dark:text-gray-100 bg-gray-100 dark:bg-gray-950;
+        font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    a {
+        text-decoration: none;
+    }
+    /* Smooth transitions for a better user experience on all elements */
+    * {
+        transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
+    }
+}
+
+/* Custom Utilities (components and reusable classes) */
+@layer components {
+    /* Custom Scrollbar for better UX */
+    .overflow-y-auto::-webkit-scrollbar {
+        width: 8px;
+    }
+    .overflow-y-auto::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 4px;
+    }
+    .overflow-y-auto::-webkit-scrollbar-thumb {
+        background: rgba(100, 116, 139, 0.4); /* Tailwind gray-400 with opacity */
+        border-radius: 4px;
+    }
+    .dark .overflow-y-auto::-webkit-scrollbar-thumb {
+        background: rgba(148, 163, 184, 0.4); /* Tailwind gray-600 with opacity */
+    }
+
+    /* Gradient-text for headings and titles */
+    .gradient-text {
+        background-image: linear-gradient(135deg, var(--tw-gradient-from), var(--tw-gradient-to));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* Custom shadow for text, useful on light backgrounds */
+    .shadow-text {
+        text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Keyframes and Animations */
+@layer utilities {
+    /* Main page fade-in animation */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+        animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    /* Sidebar slide-in animation */
+    @keyframes slideIn {
+        from { transform: translateX(-100%); }
+        to { transform: translateX(0); }
+    }
+    .animate-slideIn {
+        animation: slideIn 0.4s ease-out forwards;
+    }
+
+    /* Button and card hover effects */
+    .hover\:scale-102:hover {
+        transform: scale(1.02);
+    }
+    .hover\:scale-105:hover {
+        transform: scale(1.05);
+    }
+    .hover\:scale-110:hover {
+        transform: scale(1.1);
+    }
+
+    /* Subtle pulse for status indicators */
+    .animate-pulse-slow {
+        animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* Table row hover effect */
+    .table-row-hover:hover {
+        background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+        transform: translateX(4px);
+    }
+    
+    /* Button press effect for a tactile feel */
+    .btn-press:active {
+        transform: scale(0.98);
+    }
+    
+    /* Cleaned up and consistent gradient classes */
+    .bg-gradient-to-br.from-blue-500.to-purple-600 {
+        --tw-gradient-from: #3b82f6; /* blue-500 */
+        --tw-gradient-to: #9333ea; /* purple-600 */
+    }
+
+    .bg-gradient-to-r.from-emerald-500.to-teal-600 {
+        --tw-gradient-from: #10b981; /* emerald-500 */
+        --tw-gradient-to: #0d9488; /* teal-600 */
+    }
+
+    .bg-gradient-to-r.from-orange-500.to-red-600 {
+        --tw-gradient-from: #f97316; /* orange-500 */
+        --tw-gradient-to: #dc2626; /* red-600 */
+    }
+
+    .bg-gradient-to-br.from-blue-50.to-purple-50 {
+        --tw-gradient-from: #eff6ff; /* blue-50 */
+        --tw-gradient-to: #f5f3ff; /* purple-50 */
+    }
+    
+    .bg-gradient-to-br.from-gray-50.to-gray-100 {
+        --tw-gradient-from: #f9fafb; /* gray-50 */
+        --tw-gradient-to: #f3f4f6; /* gray-100 */
+    }
+
+    .dark .bg-gradient-to-br.from-blue-900\/20.to-purple-900\/20 {
+        --tw-gradient-from: rgba(30, 58, 138, 0.2); /* blue-900/20 */
+        --tw-gradient-to: rgba(87, 33, 155, 0.2); /* purple-900/20 */
+    }
+
+    .dark .bg-gradient-to-br.from-gray-700.to-gray-800 {
+        --tw-gradient-from: #374151; /* gray-700 */
+        --tw-gradient-to: #1f2937; /* gray-800 */
+    }
+}
