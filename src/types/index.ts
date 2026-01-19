@@ -1,5 +1,24 @@
 // types/index.ts
 
+// 1. Add the Prediction interface that your Components are explicitly using
+export interface Prediction {
+  file_id: string;
+  original_filename?: string;
+  timestamp: number;
+  
+  // These flat fields match your UploadPage and DashboardPage usage
+  species: string;
+  confidence: number;
+  species_image_url?: string; 
+  
+  audio_url: string;
+  spectrogram_url: string;
+  
+  // Optional: detailed metrics if available
+  call_parameters?: CallParameters;
+}
+
+// 2. Keep the detailed sub-types for backend processing
 export interface SpeciesDetection {
   species: string;
   confidence: number;
@@ -17,16 +36,12 @@ export interface CallParameters {
   shape: string;
 }
 
-export interface AnalysisResult {
-  file_id: string;
-  original_filename: string;
-  timestamp: number;
+// 3. Update AnalysisResult to be compatible or distinct based on backend response
+// If your backend returns the list of all detections + the top one, this covers both.
+export interface AnalysisResult extends Prediction {
   duration: number;
   sample_rate: number;
-  species_detected: SpeciesDetection[];
-  call_parameters: CallParameters;
-  spectrogram_url: string;
-  audio_url: string;
+  species_detected: SpeciesDetection[]; // The full list of candidates
   firebase_urls?: {
     audio?: string;
     audio_slow?: string;

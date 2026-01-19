@@ -5,7 +5,7 @@ import GlowingCard from '../components/GlowingCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 import SpectrogramViewer from '../components/SpectrogramViewer';
 
-const SERVICE_URL = "http://localhost:8000";
+const SERVICE_URL = "https://wildsynapse-bat-classifier-backend-570998533708.europe-west1.run.app";
 
 interface UploadPageProps {
   setActiveSection: (section: 'dashboard' | 'upload' | 'history' | 'settings') => void;

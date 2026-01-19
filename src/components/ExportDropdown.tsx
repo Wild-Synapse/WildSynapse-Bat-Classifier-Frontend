@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Download, FileText, FileBarChart, ChevronDown, ChevronUp } from 'lucide-react';
 import GlowingCard from './GlowingCard';
 
-const SERVICE_URL = "http://localhost:8000";
+const SERVICE_URL = "https://wildsynapse-bat-classifier-backend-570998533708.europe-west1.run.app";
 
 const ExportDropdown: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);

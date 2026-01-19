@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Upload, FileAudio, Image as ImageIcon, Loader2, Download, CheckCircle2, XCircle } from 'lucide-react';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_URL = import.meta.env.VITE_API_URL || 'https://wildsynapse-bat-classifier-backend-570998533708.europe-west1.run.app';
 
 type InputMode = 'audio' | 'spectrogram';
 

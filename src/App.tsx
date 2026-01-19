@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Activity, Upload, History, BarChart3, Download, Trash2, FileAudio, Image as ImageIcon, CheckCircle, XCircle, AlertCircle, Wifi, WifiOff, Moon, Sun, RefreshCw, Play, Pause, FileText, Package, ChevronDown, ChevronUp, TrendingUp, PieChart, Waves, Mic, MessageSquare, Send, Zap, Database, Clock, Target, Leaf } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, PieChart as RePieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from 'recharts';
 
-const API_BASE = 'http://localhost:8000';
+const API_BASE = 'https://wildsynapse-bat-classifier-backend-570998533708.europe-west1.run.app';
 
 type SpeciesDetected = {
   species: string;

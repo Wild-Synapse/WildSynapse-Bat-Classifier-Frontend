@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Trash2, Download, Eye, Loader2, Search, Calendar } from 'lucide-react';
 import SpeciesCard from '../components/SpeciesCard';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_URL = import.meta.env.VITE_API_URL || 'https://wildsynapse-bat-classifier-backend-570998533708.europe-west1.run.app';
 
 interface HistoryItem {
   file_id: string;
