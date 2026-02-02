@@ -24,7 +24,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const accentText = 'bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent';
 
   const navItems = [
-    { id: 'dashboard', label: 'Command Center', icon: BarChart3 },
+    { id: 'dashboard', label: 'Dashboard', icon: BarChart3 },
     { id: 'analyze', label: 'Single Analysis', icon: Upload },
     { id: 'batch', label: 'Batch Processing', icon: Package },
     { id: 'history', label: 'Data Archive', icon: History },
@@ -47,21 +47,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </div>
           <div>
             <h1 className={`text-xl font-bold tracking-tight ${accentText}`}>
-              Wild-Synapse AI
+              Pulse
             </h1>
-            <p className="text-[10px] text-slate-500 font-medium uppercase tracking-wider">Multi-Species Engine</p>
+            <p className="text-[10px] text-slate-500 font-medium uppercase tracking-wider">Bat Species Identification and Call Analysis</p>
           </div>
         </div>
 
-        <div className={`flex items-center gap-2 px-3 py-2 rounded-xl ${isOnline ? 'bg-cyan-500/10 border border-cyan-500/20' : 'bg-red-500/10 border border-red-500/20'}`}>
-          <div className={`relative flex h-3 w-3`}>
-            <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${isOnline ? 'bg-cyan-400' : 'bg-red-400'} opacity-75`}></span>
-            <span className={`relative inline-flex rounded-full h-3 w-3 ${isOnline ? 'bg-cyan-500' : 'bg-red-500'}`}></span>
-          </div>
-          <span className={`text-xs font-bold ${isOnline ? 'text-cyan-400' : 'text-red-400'}`}>
-            {isOnline ? 'SYSTEM ONLINE' : 'OFFLINE'}
-          </span>
-        </div>
+      
       </div>
 
       <nav className="p-4 space-y-2">

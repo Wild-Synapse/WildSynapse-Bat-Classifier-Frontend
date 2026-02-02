@@ -73,7 +73,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ darkMode, healthStatus, st
         
         <div className="relative z-10">
           <h2 className="text-5xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 mb-2">
-            Mission Control
+            Ecological Overview
           </h2>
           <div className={`flex items-center gap-2 text-sm font-medium tracking-wide ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
             <Activity className="w-4 h-4 text-cyan-500 animate-pulse" />
