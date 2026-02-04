@@ -96,48 +96,6 @@ export const Dashboard: React.FC<DashboardProps> = ({ darkMode, healthStatus, st
         </button>
       </div>
 
-      {/* --- SYSTEM DIAGNOSTICS (Health Status) --- */}
-      {healthStatus && (
-        <div className={`rounded-2xl p-1 overflow-hidden border ${darkMode ? 'bg-slate-950/50 border-slate-800' : 'bg-slate-100 border-slate-200'}`}>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-slate-200 dark:divide-slate-800">
-            {Object.entries(healthStatus.services).map(([key, value], idx) => {
-              const statusStr = String(value).toLowerCase();
-              const isOnline = ['online', 'enabled', 'loaded', 'connected', 'true'].includes(statusStr);
-              
-              return (
-                <div key={key} className={`group relative p-4 flex flex-col justify-between min-h-[100px] transition-colors ${
-                  darkMode ? 'hover:bg-slate-900' : 'hover:bg-white'
-                }`}>
-                  <div className="flex justify-between items-start mb-2">
-                    <span className={`text-[10px] font-bold uppercase tracking-widest opacity-60 ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
-                      {key.replace(/_/g, ' ')}
-                    </span>
-                    <div className={`relative flex h-2 w-2`}>
-                      {isOnline && <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>}
-                      <span className={`relative inline-flex rounded-full h-2 w-2 ${isOnline ? 'bg-emerald-500' : 'bg-rose-500'}`}></span>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-2 mt-auto">
-                    {isOnline ? (
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                    ) : (
-                      <AlertCircle className="w-4 h-4 text-rose-500" />
-                    )}
-                    <span className={`font-mono text-sm font-bold capitalize ${isOnline ? (darkMode ? 'text-emerald-400' : 'text-emerald-600') : 'text-rose-500'}`}>
-                      {statusStr}
-                    </span>
-                  </div>
-
-                  {/* Aesthetic Corner accents */}
-                  <div className={`absolute bottom-0 right-0 w-8 h-8 opacity-10 bg-gradient-to-tl ${isOnline ? 'from-emerald-500' : 'from-rose-500'} to-transparent`} />
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
-
       {/* --- STATISTICS GRID --- */}
       {statistics && (
         <>
